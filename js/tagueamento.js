@@ -5,9 +5,6 @@
 // para fazer a sua coleta.
 // Caso tenha alguma dúvida sobre o case, não hesite em entrar em contato.
 
-
-// let trakinUId = UA-12345-6;
-
 function addAnalitics( ) {
     window.ga = window.ga || function(){(ga.q=ga.q||[]).push(arguments)}; 
     ga.l=+new Date;
