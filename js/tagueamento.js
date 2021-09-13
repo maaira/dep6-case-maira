@@ -21,17 +21,27 @@ function sendPageVisualization(){
         'title': document.title,        
         'hitCallback' : function () {
             console.log("Event received");
-    }
-    });
+    }});
 }
 
 function sendPageVisualizationOnLoad( ) {
     addAnalitics( );
-    console.log("Send page vizualization:"+ location.pathname);
-    console.log("Send page vizualization:"+ document.title);
+    //console.log("Send page vizualization:"+ location.pathname);
+    //console.log("Send page vizualization:"+ document.title);
     if(window.addEventListener) {
         window.addEventListener('load',sendPageVisualization,false); //W3C
     } else {
         window.attachEvent('onload',sendPageVisualization); //IE
     }
+}
+
+function sendEvent(cat,act,label){
+    ga('send', {
+        hitType: 'event',
+        eventCategory: cat ,
+        eventAction: act,
+        eventLabel: label,
+        'hitCallback' : function () {
+            console.log("Event received");
+    }});
 }
