@@ -8,7 +8,7 @@
 function addAnalitics( ) {
     window.ga = window.ga || function(){(ga.q=ga.q||[]).push(arguments)}; 
     ga.l=+new Date;
-    ga('create', 'G-6S7FFW3WE6', 'auto');
+    ga('create', 'G-6EL47LX6DE', 'auto');
     ga('send', 'pageview'); 
     console.log("Iniciar GA.");
 }
