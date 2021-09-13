@@ -16,7 +16,7 @@ function addAnalitics( ) {
 }
 function sendPageVisualization(){
     ga('send', {
-        'hitType': 'page_view',
+        'hitType': 'pageview',
         'page': location.pathname,
         'title': document.title,        
         'hitCallback' : function () {
