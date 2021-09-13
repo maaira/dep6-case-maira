@@ -21,6 +21,25 @@
         
     });
 
+    jQuery('#name').click(function () {
+        sendEvent('“contato', this.id, 'preencheu');
+        
+    });
+
+    jQuery('#telefone').click(function () {
+        sendEvent('“contato', this.id, 'preencheu');        
+    }); 
+
+    jQuery('#email').click(function () {
+        sendEvent('“contato', this.id, 'preencheu');
+        
+    }); 
+
+    jQuery('#enviar_contato').click(function () {
+        sendEvent('contato', 'enviado', 'enviado');
+        
+    }); 
+    
 })(jQuery);
 
 
