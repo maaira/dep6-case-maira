@@ -15,19 +15,18 @@ function addAnalitics( ) {
 function sendPageVisualization(){
     ga('send', {
         hitType: 'pageview',
-        page: location.pathname
+        page: location.pathname,
+        title: document.title
     });
 }
 
 function sendPageVisualizationOnLoad( ) {
     addAnalitics( );
-    console.log("Send page vizualization."+ location.pathname);
-    console.log("Send page vizualization."+ document.title);
+    console.log("Send page vizualization:"+ location.pathname);
+    console.log("Send page vizualization:"+ document.title);
     if(window.addEventListener) {
         window.addEventListener('load',sendPageVisualization,false); //W3C
     } else {
         window.attachEvent('onload',sendPageVisualization); //IE
     }
-      
-
 }
