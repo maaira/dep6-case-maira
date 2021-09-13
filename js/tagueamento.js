@@ -18,8 +18,8 @@ function sendPageVisualization( ) {
     //    hitType: 'pageview',
     //    page: document.title
     //  });
-    console.log("Send page vizualization."+ location.pathname+ 'uhuu ');
     console.log("Send page vizualization."+ location.pathname);
+    console.log("Send page vizualization."+ document.title);
     var form = document;
     form.addEventListener('submit', function(event) {
 
