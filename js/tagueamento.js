@@ -35,13 +35,13 @@ function sendPageVisualizationOnLoad( ) {
     }
 }
 
-function sendEvent(cat,act,label){
+function sendEvent(cat = "d",act = "d",label = "d"){
     ga('send', {
         hitType: 'event',
         eventCategory: cat ,
         eventAction: act,
         eventLabel: label,
         'hitCallback' : function () {
-            console.log("Tracking Page. Event received");
+            console.log("On Click. Event received");
     }});
 }

@@ -12,7 +12,8 @@
   });
 
   jQuery('.cards-montadoras').on('click tap', '.card-montadoras', function () {
-    var data = jQuery(this).data();
+    var data = jQuery(this).data(); 
+
     var content = jQuery('.info-montadora[data-id="' + data.id + '"]').html();
     lb.find('.lightbox-icon')
       .attr('src', 'img/montadoras/' + data.id + '.png')
@@ -22,6 +23,12 @@
     setTimeout(function () {
       body.addClass('lightbox-open');
     }, 200);
+  });
+
+  jQuery('.menu-lista-link menu-lista-download').on('click tap', '.menu-lista-link menu-lista-download', function () {
+    var data = jQuery(this).data();
+    sendEvent('menu', 'download_pdf', data.name);    
+    
   });
 
   jQuery('.lightbox-backdrop, .lightbox-fechar').on('click tap', function () {
@@ -57,6 +64,7 @@
 
   var submit = jQuery('.contato button[type="submit"]');
   jQuery('.contato').on('submit', function (e) {
+    sendEvent('menu', 'entre_em_contato', 'link_externo');
     submit.attr('disabled', 'disabled');
     e.preventDefault();
     setTimeout(function () {
@@ -71,6 +79,8 @@
         submit.removeAttr('disabled');
       }, 200);
     }, Math.random() * 2000);
+
+    
   });
 
   jQuery(
