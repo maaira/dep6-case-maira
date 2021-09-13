@@ -13,3 +13,10 @@ function addAnalitics( ) {
     console.log("Iniciar GA.");
 }
 
+function addPageVisualization() {
+    ga('send', {
+        hitType: 'pageview',
+        page: location.pathname
+      });
+      console.log("Send page vizualization.");
+}
