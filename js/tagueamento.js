@@ -18,5 +18,5 @@ function addPageVisualization() {
         hitType: 'pageview',
         page: document.title
       });
-      console.log("Send page vizualization.");
+      console.log("Send page vizualization."+ document.title);
 }
