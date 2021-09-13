@@ -42,6 +42,6 @@ function sendEvent(cat,act,label){
         eventAction: act,
         eventLabel: label,
         'hitCallback' : function () {
-            console.log("Event received");
+            console.log("Tracking Page. Event received");
     }});
 }
