@@ -11,8 +11,8 @@ function addAnalitics( ) {
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('send', 'pageview');
+    ga('create', 'UA-12345-6', 'auto');
+    
 }
 function sendPageVisualization(){
     ga('send', {
@@ -35,7 +35,7 @@ function sendPageVisualizationOnLoad( ) {
     }
 }
 
-function sendEvent(cat = "d",act = "d",label = "d"){
+function sendEvent(cat ,act ,label){
     ga('send', {
         hitType: 'event',
         eventCategory: cat ,
