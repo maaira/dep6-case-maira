@@ -20,7 +20,7 @@ function sendPageVisualization(){
 }
 
 function sendPageVisualizationOnLoad( ) {
-    
+    addAnalitics( );
     console.log("Send page vizualization."+ location.pathname);
     console.log("Send page vizualization."+ document.title);
     if(window.addEventListener) {
