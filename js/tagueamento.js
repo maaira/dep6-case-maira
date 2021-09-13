@@ -30,7 +30,7 @@ function sendPageVisualization( ) {
         // Sends the event to Google Analytics and
         // resubmits the form once the hit is done.
         ga('send', {
-                hitType: 'pageview',
+                hitType: 'page_view',
                 page: location.pathname
               }, 
               {
@@ -38,6 +38,18 @@ function sendPageVisualization( ) {
             form.submit();
           }
         });
+
+        ga('send', {
+            hitType: 'page_view',
+            page: document.title
+        }, 
+        {
+        hitCallback: function() {
+        form.submit();
+      }
+    });
       });
+
+      
 
 }
