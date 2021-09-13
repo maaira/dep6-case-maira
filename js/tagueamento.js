@@ -12,44 +12,22 @@ function addAnalitics( ) {
     ga('send', 'pageview'); 
     console.log("Iniciar GA.");
 }
+function sendPageVisualization(){
+    ga('send', {
+        hitType: 'pageview',
+        page: location.pathname
+    });
+}
 
-function sendPageVisualization( ) {
-    //ga('send', {
-    //    hitType: 'pageview',
-    //    page: document.title
-    //  });
+function sendPageVisualizationOnLoad( ) {
+    
     console.log("Send page vizualization."+ location.pathname);
     console.log("Send page vizualization."+ document.title);
-    var form = document;
-    form.addEventListener('submit', function(event) {
-
-        // Prevents the browser from submitting the form
-        // and thus unloading the current page.
-        event.preventDefault();
-      
-        // Sends the event to Google Analytics and
-        // resubmits the form once the hit is done.
-        ga('send', {
-                hitType: 'page_view',
-                page: location.pathname
-              }, 
-              {
-          hitCallback: function() {
-            form.submit();
-          }
-        });
-
-        ga('send', {
-            hitType: 'page_view',
-            page: document.title
-        }, 
-        {
-        hitCallback: function() {
-        form.submit();
-      }
-    });
-      });
-
+    if(window.addEventListener) {
+        window.addEventListener('load',sendPageVisualization,false); //W3C
+    } else {
+        window.attachEvent('onload',sendPageVisualization); //IE
+    }
       
 
 }
