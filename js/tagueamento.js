@@ -13,7 +13,7 @@ function addAnalitics( ) {
     console.log("Iniciar GA.");
 }
 
-function SendPageVisualization() {
+function sendPageVisualization( ) {
     ga('send', {
         hitType: 'pageview',
         page: document.title
