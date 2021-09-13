@@ -16,7 +16,7 @@ function addAnalitics( ) {
 function addPageVisualization() {
     ga('send', {
         hitType: 'pageview',
-        page: location.pathname
+        page: document.title
       });
       console.log("Send page vizualization.");
 }
