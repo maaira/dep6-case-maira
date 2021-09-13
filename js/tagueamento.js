@@ -14,9 +14,29 @@ function addAnalitics( ) {
 }
 
 function sendPageVisualization( ) {
-    ga('send', {
-        hitType: 'pageview',
-        page: document.title
+    //ga('send', {
+    //    hitType: 'pageview',
+    //    page: document.title
+    //  });
+    console.log("Send page vizualization."+ location.pathname);
+    var form = document;
+    form.addEventListener('submit', function(event) {
+
+        // Prevents the browser from submitting the form
+        // and thus unloading the current page.
+        event.preventDefault();
+      
+        // Sends the event to Google Analytics and
+        // resubmits the form once the hit is done.
+        ga('send', {
+                hitType: 'pageview',
+                page: location.pathname
+              }, 
+              {
+          hitCallback: function() {
+            form.submit();
+          }
+        });
       });
-      console.log("Send page vizualization."+ document.title);
+
 }
