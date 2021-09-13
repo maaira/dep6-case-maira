@@ -14,9 +14,12 @@ function addAnalitics( ) {
 }
 function sendPageVisualization(){
     ga('send', {
-        hitType: 'pageview',
-        page: location.pathname,
-        title: document.title
+        'hitType': 'pageview',
+        'page': location.pathname,
+        'title': document.title,        
+        'hitCallback' : function () {
+            alert("Event received");
+    }
     });
 }
 
